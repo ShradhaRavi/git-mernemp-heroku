@@ -31,7 +31,7 @@ export default class EditEmployee extends Component{
 
     componentDidMount() 
     {
-        axios.get('http://localhost:3001/employees/'+this.props.match.params.id)
+        axios.get('/employees/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     EmployeeSSN: response.data.EmployeeSSN,
@@ -44,7 +44,7 @@ export default class EditEmployee extends Component{
                 })
         })
 
-        axios.get('http://localhost:3001/departments/')
+        axios.get('/departments/')
             .then(response => {
                 if(response.data.length > 0){
                     this.setState({
@@ -110,7 +110,7 @@ export default class EditEmployee extends Component{
         }
         console.log(employee)
 
-        axios.post('http://localhost:3001/employees/update/'+this.props.match.params.id, employee)
+        axios.post('/employees/update/'+this.props.match.params.id, employee)
             .then(res => console.log(res.data));
 
         window.location ='/';
