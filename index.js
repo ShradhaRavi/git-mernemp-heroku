@@ -10,7 +10,7 @@ const port = process.env.PORT || 3001; //define and initialise port
 
 const EmployeeModel = require("./models/Employee");
 
-app.use(express.static(path.join(__dirname, "client", "build")))
+app.use(express.static(path.join(__dirname, "Client", "build")))
 app.use(cors());
 app.use(express.json()); //recieve info from frontend in json format
 
@@ -28,7 +28,7 @@ app.use('/employees', employeesRouter);
 app.use('/departments', departmentsRouter);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.join(__dirname, "Client", "build", "index.html"));
 });
 
 app.listen(port, () => {
