@@ -22,7 +22,7 @@ services:
     networks:
       - mern-app
     volumes:
-      - mongo-data:/data/db
+      - mongo-data:/data/connection
 networks:
   mern-app:
     driver: bridge
