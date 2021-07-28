@@ -31,7 +31,7 @@ export default class EmployeeList extends Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3001/employees/')
+        axios.get('/employees/')
             .then(response => {
                 this.setState({ employees: response.data})
             })
@@ -41,7 +41,7 @@ export default class EmployeeList extends Component{
     }
 
     deleteEmployee(id) {
-        axios.delete('http://localhost:3001/employees/' +id)
+        axios.delete('/employees/' +id)
             .then(res => console.log(res.data));
 
         this.setState({ 
