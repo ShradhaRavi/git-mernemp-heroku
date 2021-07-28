@@ -32,7 +32,7 @@ export default class CreateEmployee extends Component{
 
     componentDidMount() 
     {
-        axios.get('http://localhost:3001/departments/')
+        axios.get('/departments/')
             .then(response => {
                 if(response.data.length > 0){
                     this.setState({
@@ -98,7 +98,7 @@ export default class CreateEmployee extends Component{
         }
         console.log(employee)
 
-        axios.post('http://localhost:3001/employees/add/',employee)
+        axios.post('/employees/add/',employee)
             .then(res => console.log(res.data));
 
         window.location ='/';
