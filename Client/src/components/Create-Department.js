@@ -36,7 +36,7 @@ export default class CreateDepartment extends Component{
         }
         console.log(department)
 
-        axios.post('http://localhost:3001/departments/add/',department)
+        axios.post('/departments/add/',department)
             .then(res => console.log(res.data));
 
         this.setState({
